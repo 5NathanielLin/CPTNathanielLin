@@ -7,5 +7,6 @@ public class CPTNathaniel{
 		
 		con.println("Test");
 		con.println("Test2");
+		con.println("Test3");
 	}
 }
