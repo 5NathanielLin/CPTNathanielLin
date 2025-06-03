@@ -6,30 +6,56 @@ import java.awt.Font;
 public class CPTNathaniel{
 	public static void main(String[]args){
 		Console con = new Console(1200,1500);
-		BufferedImage imgMathLogo = con.loadImage("MathLogo.png");
-		//Font title = con.loadFont("", 40);
 		
-		// Changed Background to white 
-		con.setDrawColor(Color.WHITE);
-		con.fillRect(0,0,1200,1500);
+		char chrMainMenu;
+			BufferedImage imgMathLogo = con.loadImage("MathLogo.png");
+			//Font MathFont = con.loadFont("MathFont.ttf",30);
+			//con.setDrawFont(MathFont);
 		
-		//Logo
-		con.drawImage(imgMathLogo,300,75);
+			// Changed Background to white 
+			con.setDrawColor(Color.WHITE);
+			con.fillRect(0,0,1200,1500);
+		
+			//Logo
+			con.drawImage(imgMathLogo,300,75);
 
 		
 		
-		// Buttons 
-		con.setDrawColor(new Color(0,0,0));
-		con.drawString("Play [P]", 700,300);
-		con.setDrawColor(new Color(0,0,0));
-		con.drawString("View Leaderboard [V]",700,325);
-		con.setDrawColor(new Color(0,0,0));
-		con.drawString("Add Quiz [A]",700,350);
-		con.setDrawColor(new Color(0,0,0));
-		con.drawString("Quit [Q]",700,375);
+			// Buttons 
+			con.setDrawColor(new Color(0,0,0));
+			con.drawString("Play [P]", 700,300);
+			con.setDrawColor(new Color(0,0,0));
+			con.drawString("View Leaderboard [V]",700,325);
+			con.setDrawColor(new Color(0,0,0));
+			con.drawString("Add Quiz [A]",700,350);
+			con.setDrawColor(new Color(0,0,0));
+			con.drawString("Quit [Q]",700,375);
+
+			//Repainting to ensure above images are loadin	
+			con.repaint();
+			
+		chrMainMenu = con.getChar();
+		System.out.println("letter: "+chrMainMenu);
 		
-		//Repainting to ensure above images are loading
-		con.repaint();
-		
+		if(chrMainMenu == 'p'||chrMainMenu == 'P'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+			con.println("What is your name?: ");
+			con.readLine();
+		}
+		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
+			con.setDrawColor(Color.WHITE);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+		}
+		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
+			con.setDrawColor(Color.WHITE);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+		}
+		if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
+			con.closeConsole();
+		}
 	}
 }
