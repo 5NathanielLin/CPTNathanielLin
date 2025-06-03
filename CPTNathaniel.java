@@ -8,7 +8,7 @@ public class CPTNathaniel{
 		Console con = new Console(1200,1500);
 		
 		char chrMainMenu;
-			BufferedImage imgMathLogo = con.loadImage("MathLogo.png");
+			BufferedImage imgMathLogo = con.loadImage("MathPi.png");
 			//Font MathFont = con.loadFont("MathFont.ttf",30);
 			//con.setDrawFont(MathFont);
 		
@@ -17,7 +17,7 @@ public class CPTNathaniel{
 			con.fillRect(0,0,1200,1500);
 		
 			//Logo
-			con.drawImage(imgMathLogo,300,75);
+			con.drawImage(imgMathLogo,250,75);
 
 		
 		
@@ -42,6 +42,8 @@ public class CPTNathaniel{
 			con.fillRect(0,0,1200,1500);
 			con.repaint();
 			con.println("What is your name?: ");
+			con.readLine();
+			con.println("Which quiz do you want to play?: Linear, Quadratics, Geometry");
 			con.readLine();
 		}
 		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
