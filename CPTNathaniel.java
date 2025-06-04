@@ -35,8 +35,8 @@ public class CPTNathaniel{
 			con.repaint();
 			
 			//variables
-			char chrUsername;
-			char chrCurrentQuiz;
+			String strUsername;
+			String strCurrentQuiz;
 			
 			chrMainMenu = con.getChar();
 			System.out.println("letter: "+chrMainMenu);
@@ -46,11 +46,18 @@ public class CPTNathaniel{
 				con.fillRect(0,0,1200,1500);
 				con.repaint();
 				con.println("What is your name?: ");
-				chrUsername = con.readChar();
-				con.println("Which quiz do you want to play?: Linear, Quadratics, Geometry");
-				chrCurrentQuiz = con.readChar();
-				//if(
-			//}
+				strUsername = con.readLine();
+				con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
+				strCurrentQuiz = con.readLine();
+				if(strCurrentQuiz == "Linear"||strCurrentQuiz == "linear"){
+					TextInputFile LinearQuiz = new TextInputFile("linear.txt");
+				}else if(strCurrentQuiz == "Quadratics"||strCurrentQuiz == "quadratics"){
+					TextInputFile QuadraticsQuiz = new TextInputFile("quadratics.txt");
+				}else if(strCurrentQuiz == "Geometry"||strCurrentQuiz == "geometry"){
+					TextInputFile GeomtryQuiz = new TextInputFile("geometry.txt");
+				}else{
+					con.println("Quiz is unavaiable");
+				}
 			if(chrMainMenu == 'v'||chrMainMenu == 'V'){
 				con.setDrawColor(Color.WHITE);
 				con.fillRect(0,0,1200,1500);
