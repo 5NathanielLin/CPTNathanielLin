@@ -34,30 +34,36 @@ public class CPTNathaniel{
 			//Repainting to ensure above images are loadin	
 			con.repaint();
 			
-		chrMainMenu = con.getChar();
-		System.out.println("letter: "+chrMainMenu);
+			//variables
+			char chrUsername;
+			char chrCurrentQuiz;
+			
+			chrMainMenu = con.getChar();
+			System.out.println("letter: "+chrMainMenu);
 		
-		if(chrMainMenu == 'p'||chrMainMenu == 'P'){
-			con.setDrawColor(Color.BLACK);
-			con.fillRect(0,0,1200,1500);
-			con.repaint();
-			con.println("What is your name?: ");
-			con.readLine();
-			con.println("Which quiz do you want to play?: Linear, Quadratics, Geometry");
-			con.readLine();
-		}
-		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
-			con.setDrawColor(Color.WHITE);
-			con.fillRect(0,0,1200,1500);
-			con.repaint();
-		}
-		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
-			con.setDrawColor(Color.WHITE);
-			con.fillRect(0,0,1200,1500);
-			con.repaint();
-		}
-		if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
-			con.closeConsole();
+			if(chrMainMenu == 'p'||chrMainMenu == 'P'){
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0,0,1200,1500);
+				con.repaint();
+				con.println("What is your name?: ");
+				chrUsername = con.readChar();
+				con.println("Which quiz do you want to play?: Linear, Quadratics, Geometry");
+				chrCurrentQuiz = con.readChar();
+				//if(
+			//}
+			if(chrMainMenu == 'v'||chrMainMenu == 'V'){
+				con.setDrawColor(Color.WHITE);
+				con.fillRect(0,0,1200,1500);
+				con.repaint();
+			}
+			if(chrMainMenu == 'a'||chrMainMenu == 'A'){
+				con.setDrawColor(Color.WHITE);
+				con.fillRect(0,0,1200,1500);
+				con.repaint();
+			}
+			if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
+				con.closeConsole();
+			}
 		}
 	}
 }
