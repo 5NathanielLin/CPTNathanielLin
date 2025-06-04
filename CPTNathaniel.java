@@ -49,11 +49,11 @@ public class CPTNathaniel{
 				strUsername = con.readLine();
 				con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
 				strCurrentQuiz = con.readLine();
-				if(strCurrentQuiz == "Linear"||strCurrentQuiz == "linear"){
+				if(strCurrentQuiz.equalsIgnoreCase("Linear")){
 					TextInputFile LinearQuiz = new TextInputFile("linear.txt");
-				}else if(strCurrentQuiz == "Quadratics"||strCurrentQuiz == "quadratics"){
+				}else if(strCurrentQuiz.equalsIgnoreCase("Quadratics")){
 					TextInputFile QuadraticsQuiz = new TextInputFile("quadratics.txt");
-				}else if(strCurrentQuiz == "Geometry"||strCurrentQuiz == "geometry"){
+				}else if(strCurrentQuiz.equalsIgnoreCase("Geometry")){
 					TextInputFile GeomtryQuiz = new TextInputFile("geometry.txt");
 				}else{
 					con.println("Quiz is unavaiable");
