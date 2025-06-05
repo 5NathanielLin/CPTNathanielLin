@@ -7,6 +7,7 @@ public class CPTNathaniel{
 	public static void main(String[]args){
 		Console con = new Console(1200,1500);
 		
+		
 		char chrMainMenu;
 			BufferedImage imgMathLogo = con.loadImage("MathPi.png");
 			//Font MathFont = con.loadFont("MathFont.ttf",30);
@@ -41,36 +42,47 @@ public class CPTNathaniel{
 			chrMainMenu = con.getChar();
 			System.out.println("letter: "+chrMainMenu);
 		
-			if(chrMainMenu == 'p'||chrMainMenu == 'P'){
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0,0,1200,1500);
-				con.repaint();
-				con.println("What is your name?: ");
-				strUsername = con.readLine();
-				con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
-				strCurrentQuiz = con.readLine();
-				if(strCurrentQuiz.equalsIgnoreCase("Linear")){
-					TextInputFile LinearQuiz = new TextInputFile("linear.txt");
-				}else if(strCurrentQuiz.equalsIgnoreCase("Quadratics")){
-					TextInputFile QuadraticsQuiz = new TextInputFile("quadratics.txt");
-				}else if(strCurrentQuiz.equalsIgnoreCase("Geometry")){
-					TextInputFile GeomtryQuiz = new TextInputFile("geometry.txt");
-				}else{
-					con.println("Quiz is unavaiable");
-				}
-			if(chrMainMenu == 'v'||chrMainMenu == 'V'){
-				con.setDrawColor(Color.WHITE);
-				con.fillRect(0,0,1200,1500);
-				con.repaint();
+		if(chrMainMenu == 'p'||chrMainMenu == 'P'){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+			con.println("What is your name?: ");
+			strUsername = con.readLine();
+			con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
+			strCurrentQuiz = con.readLine();
+			
+			if(strCurrentQuiz.equalsIgnoreCase("Linear")){
+				TextInputFile LinearQuiz = new TextInputFile("linear.txt");
+			}else if(strCurrentQuiz.equalsIgnoreCase("Quadratics")){
+				TextInputFile QuadraticsQuiz = new TextInputFile("quadratics.txt");
+			}else if(strCurrentQuiz.equalsIgnoreCase("Geometry")){
+				TextInputFile GeomtryQuiz = new TextInputFile("geometry.txt");
+			}else{
+				con.println("Quiz is unavaiable");
 			}
-			if(chrMainMenu == 'a'||chrMainMenu == 'A'){
-				con.setDrawColor(Color.WHITE);
-				con.fillRect(0,0,1200,1500);
-				con.repaint();
+			
+			// Setup 2d Array
+			String[][] strMathQuiz = new String[10][5];
+			int intRow;
+			intRow = 0;
+			
+			while(strCurrentQuiz && intRow <10
+			
 			}
-			if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
-				con.closeConsole();
-			}
+				
+		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
+			con.setDrawColor(Color.WHITE);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+		}
+		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
+			con.setDrawColor(Color.WHITE);
+			con.fillRect(0,0,1200,1500);
+			con.repaint();
+		}
+		if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
+			con.closeConsole();
 		}
 	}
 }
+
