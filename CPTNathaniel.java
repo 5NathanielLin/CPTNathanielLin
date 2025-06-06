@@ -50,13 +50,23 @@ public class CPTNathaniel{
 			strUsername = con.readLine();
 			con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
 			strCurrentQuiz = con.readLine();
+			con.clear();
+			
+			TextInputFile CurrentQuiz = new TextInputFile("linear.txt");
 			
 			if(strCurrentQuiz.equalsIgnoreCase("Linear")){
-				TextInputFile LinearQuiz = new TextInputFile("linear.txt");
+				CurrentQuiz = new TextInputFile("linear.txt");
+				con.setDrawColor(Color.WHITE);
+				con.fillRect(0,0,1200,1500);
+				con.setDrawColor(Color.BLACK);
+				con.drawString(strUsername,200,20);
+				con.setDrawColor(Color.BLACK);
+				con.drawString(strCurrentQuiz,470,20);
+				
 			}else if(strCurrentQuiz.equalsIgnoreCase("Quadratics")){
-				TextInputFile QuadraticsQuiz = new TextInputFile("quadratics.txt");
+				CurrentQuiz = new TextInputFile("quadratics.txt");
 			}else if(strCurrentQuiz.equalsIgnoreCase("Geometry")){
-				TextInputFile GeomtryQuiz = new TextInputFile("geometry.txt");
+				CurrentQuiz = new TextInputFile("geometry.txt");
 			}else{
 				con.println("Quiz is unavaiable");
 			}
@@ -65,11 +75,25 @@ public class CPTNathaniel{
 			String[][] strMathQuiz = new String[10][5];
 			int intRow;
 			intRow = 0;
+			String strQuestionLine;
 			
-			while(strCurrentQuiz && intRow <10
+			
+			
+			while(CurrentQuiz.eof() == false && intRow <10){
+				strMathQuiz[0][0] = CurrentQuiz.readLine();
+				strMathQuiz[0][1] = CurrentQuiz.readLine();
+				strMathQuiz[0][2] = CurrentQuiz.readLine();
+				strMathQuiz[0][3] = CurrentQuiz.readLine();
+				//strMathQuiz[0][4]
+				con.setTextColor(Color.BLACK);
+				con.println("Question" +strMathQuiz[0][0]);
+				con.println("A:"+strMathQuiz[0][1]);
+				con.println("B:"+strMathQuiz[0][2]);
+				con.println("C:"+strMathQuiz[0][3]);
+				
 			
 			}
-				
+			
 		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
 			con.setDrawColor(Color.WHITE);
 			con.fillRect(0,0,1200,1500);
@@ -84,5 +108,6 @@ public class CPTNathaniel{
 			con.closeConsole();
 		}
 	}
+}
 }
 
