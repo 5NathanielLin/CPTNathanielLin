@@ -90,6 +90,8 @@ public class CPTNathaniel{
 			intRow = 0;
 			String strQuestionLine;
 			String strAnswer;
+			int intCounter;
+			intCounter = 0;
 			
 			
 			while(CurrentQuiz.eof() == false && intRow <10){
@@ -99,9 +101,11 @@ public class CPTNathaniel{
 				strMathQuiz[0][3] = CurrentQuiz.readLine();
 				//strMathQuiz[0][4]
 				con.setTextColor(Color.BLACK);
-				con.println("Question: " +strMathQuiz[0][0]);
+				con.println("\n\nQuestion: " +strMathQuiz[0][0]);
 				strAnswer = con.readLine();
-				if(strAnswer == strMathQuiz[0][1]||strAnswer == strMathQuiz[0][2]||strAnswer == strMathQuiz[0][3]){	
+				if(strAnswer.equals(strMathQuiz[0][1])||strAnswer.equals(strMathQuiz[0][2])||strAnswer.equalsIgnoreCase(strMathQuiz[0][3])){	
+					intCounter = intCounter + 1;
+					con.println("Correct!");
 					con.println("A:"+strMathQuiz[0][1]);
 					con.println("B:"+strMathQuiz[0][2]);
 					con.println("C:"+strMathQuiz[0][3]);
