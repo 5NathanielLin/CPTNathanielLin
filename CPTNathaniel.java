@@ -2,6 +2,7 @@ import arc.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.Font;
+import java.util.Random;
 
 public class CPTNathaniel{
 	public static void main(String[]args){
@@ -92,23 +93,27 @@ public class CPTNathaniel{
 			String strAnswer;
 			int intCounter;
 			intCounter = 0;
-			
+		
 			
 			while(CurrentQuiz.eof() == false && intRow <10){
-				strMathQuiz[0][0] = CurrentQuiz.readLine();
-				strMathQuiz[0][1] = CurrentQuiz.readLine();
-				strMathQuiz[0][2] = CurrentQuiz.readLine();
-				strMathQuiz[0][3] = CurrentQuiz.readLine();
-				//strMathQuiz[0][4]
+				strMathQuiz[intRow][0] = CurrentQuiz.readLine();
+				strMathQuiz[intRow][1] = CurrentQuiz.readLine();
+				strMathQuiz[intRow][2] = CurrentQuiz.readLine();
+				strMathQuiz[intRow][3] = CurrentQuiz.readLine();
+				Random random = new Random();
+				int randoNumber = random.nextInt(100) + 1;
+				con.println(randoNumbter);
+				//strMathQuiz[intRow][4] = randoNumber;
 				con.setTextColor(Color.BLACK);
 				con.println("\n\nQuestion: " +strMathQuiz[0][0]);
 				strAnswer = con.readLine();
-				if(strAnswer.equals(strMathQuiz[0][1])||strAnswer.equals(strMathQuiz[0][2])||strAnswer.equalsIgnoreCase(strMathQuiz[0][3])){	
+				if(strAnswer.equals(strMathQuiz[intRow][1])||strAnswer.equals(strMathQuiz[intRow][2])||strAnswer.equalsIgnoreCase(strMathQuiz[intRow][3])){	
 					intCounter = intCounter + 1;
 					con.println("Correct!");
-					con.println("A:"+strMathQuiz[0][1]);
-					con.println("B:"+strMathQuiz[0][2]);
-					con.println("C:"+strMathQuiz[0][3]);
+					con.println("A:"+strMathQuiz[intRow][1]);
+					con.println("B:"+strMathQuiz[intRow][2]);
+					con.println("C:"+strMathQuiz[intRow][3]);
+					con.println(strMathQuiz[intRow][4]);
 				}else{
 					con.println("Wrong Answer");
 				}
