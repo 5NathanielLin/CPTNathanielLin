@@ -1,1 +1,40 @@
-B
+What are the roots of y = (x-2)(x+5)?
++2,-5
+2,-5
+two and negative five
+What are the roots of y = (x+7)(x-4)?
+-7,+4
+-7,4
+negative seven and four
+What are the roots of y = (x+0)(x-2)?
++2
+2
+two
+How much is this parabola stretched by? y = 3(x-4)^2+6?
++3
+3
+three
+How much is this parabola horizontally shifted by y = 3(x-4)^2+6?
++4
+4
+four
+How much is this parabola vertically shifted by y = 3(x-4)^2+6?
++6
+6
+six
+What is x: x^2-1=15
++4
+4
+four
+What is the vertex of y = 4(x-2)^2+7
+(+2,+7)
+(2,7)
+two and seven
+What is the axis of symmetry of y = (x-6)^2+3
++6
+6
+six
+Solve for x: x^2-21=15
++6
+6
+six

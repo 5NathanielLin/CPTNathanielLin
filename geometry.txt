@@ -1,1 +1,40 @@
-C
+What is the sum of all the angles in a triangle?
++180
+180
+one hundred eighty
+How many faces does a cube have?
++6
+6
+six
+What is the perimeter of a square that has a side length of 5?
++20
+20
+twenty
+How many degrees is a right angle?
++90
+90
+ninety
+How many sides does a pentagon have?
++5
+5
+five
+What is the area of a triangle with a base of 5 and a height of 4?
++10
+10
+ten
+What is the area of a square that has a diagonal of 5?
++25
+25
+twenty five
+What is the hypotenuse of a triangle with a side lengths 12 and 16?
++20
+20
+twenty
+What is the volume of a rectangular prism with the dimensions: 5,6,7?
++210
+210
+two hundred and ten
+What is the area of a trapezoid with bases, 5 and 7, and a height of 2?
++12
+12
+twelve
