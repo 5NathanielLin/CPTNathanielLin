@@ -165,32 +165,7 @@ public class CPTNathaniel{
 			con.fillRect(0, 0, 1200, 1500);
 			con.setDrawColor(Color.BLACK);
 			con.drawString("Quiz completed!, press [R] to return to the main menu.", 100, 100);
-			
-			
-			char chrReturnMainMenu;
-			chrReturnMainMenu = con.getChar();
-			System.out.println("letter: "+chrReturnMainMenu);
-			if(chrReturnMainMenu == 'r'||chrReturnMainMenu == 'R'){
-				con.setDrawColor(Color.WHITE);
-				con.fillRect(0,0,1200,1500);
 		
-			//Logo
-				con.drawImage(imgMathLogo,250,75);
-
-		
-		
-			// Buttons 
-				con.setDrawColor(new Color(0,0,0));
-				con.drawString("Play [P]", 700,300);
-				con.setDrawColor(new Color(0,0,0));
-				con.drawString("View Leaderboard [V]",700,325);
-				con.setDrawColor(new Color(0,0,0));
-				con.drawString("Add Quiz [A]",700,350);
-				con.setDrawColor(new Color(0,0,0));
-				con.drawString("Quit [Q]",700,375);
-
-			//Repainting to ensure above images are loadin	
-				con.repaint();
 		}
 		//View leaderboard portion	
 		if(chrMainMenu == 'v'||chrMainMenu == 'V'){
@@ -223,10 +198,15 @@ public class CPTNathaniel{
 		}
 		LeaderboardExtracting.close();
 		
-		for(int i = 0; i < leaderboardRow; i++) {
-			con.drawString((i+1) + ". " + leaderboard[i][0] + " - " + leaderboard[i][1] + " - " + leaderboard[i][2], 50, 50 + i*30);
-		}
-		}
+		if(leaderboardRow == 0) {
+			con.setDrawColor(Color.BLACK);
+			con.drawString("It's kind of empty here right now.", 100, 100);
+		}else{
+			for(int i = 0; i < leaderboardRow; i++) {
+				con.drawString((i+1) + ". " + leaderboard[i][0] + " - " + leaderboard[i][1] + " - " + leaderboard[i][2], 50, 50 + i*30);
+        }
+    }
+}
 
 		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
 			con.setDrawColor(Color.WHITE);
@@ -241,6 +221,7 @@ public class CPTNathaniel{
 			String StrCorrectAnswer2;
 			String StrCorrectAnswer3;
 			
+			con.setTextColor(Color.BLACK);
 			con.println("Enter new quiz file name (e.g. newquiz.txt): ");
 			StrNewQuizFile = con.readLine();
 			con.println("How many questions do you want in your quiz? (max 10): ");
@@ -274,6 +255,6 @@ public class CPTNathaniel{
 	}
 }
 }
-}
+
 
 
