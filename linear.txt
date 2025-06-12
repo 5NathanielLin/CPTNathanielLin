@@ -23,9 +23,9 @@ Solve for x: 4x + 6 = 26
 5
 five
 What is the y-intercept of y = 2x + 7
-+8
-8
-eight
++7
+7
+seven
 What is the slope of y = 7x + 4/5
 +7
 7

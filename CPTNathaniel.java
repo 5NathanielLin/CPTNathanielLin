@@ -39,16 +39,18 @@ public class CPTNathaniel{
 			//Repainting to ensure above images are loadin	
 			con.repaint();
 			
-			//variables
-			String strUsername;
-			String strCurrentQuiz;
 			
 			chrMainMenu = con.getChar();
 			System.out.println("letter: "+chrMainMenu);
 		
 		
+
+			
 		// Quiz portion
 		if(chrMainMenu == 'p'||chrMainMenu == 'P'){
+			
+			String strUsername;
+			String strCurrentQuiz;
 			con.setDrawColor(Color.BLACK);
 			con.fillRect(0,0,1200,1500);
 			con.repaint();
@@ -224,11 +226,47 @@ public class CPTNathaniel{
 		for(int i = 0; i < leaderboardRow; i++) {
 			con.drawString((i+1) + ". " + leaderboard[i][0] + " - " + leaderboard[i][1] + " - " + leaderboard[i][2], 50, 50 + i*30);
 		}
+		}
 
 		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
 			con.setDrawColor(Color.WHITE);
 			con.fillRect(0,0,1200,1500);
 			con.repaint();
+			
+			//variables
+			String StrNewQuizFile;
+			int intAmountQuestions;
+			String StrQuestion;
+			String StrCorrectAnswer;
+			String StrCorrectAnswer2;
+			String StrCorrectAnswer3;
+			
+			con.println("Enter new quiz file name (e.g. newquiz.txt): ");
+			StrNewQuizFile = con.readLine();
+			con.println("How many questions do you want in your quiz? (max 10): ");
+			intAmountQuestions = Integer.parseInt(con.readLine());
+			
+			
+			 TextOutputFile newQuiz = new TextOutputFile(StrNewQuizFile);
+    
+		for(int i = 0; i < intAmountQuestions; i++) {
+			con.println("Enter question"+(i+1)+": ");
+			StrQuestion = con.readLine();
+			con.println("Enter correct answer: ");
+			StrCorrectAnswer = con.readLine();
+			con.println("Enter another answer: ");
+			StrCorrectAnswer2 = con.readLine();
+			con.println("Enter another answer: ");
+			StrCorrectAnswer3 = con.readLine();
+			
+			newQuiz.println(StrQuestion);
+			newQuiz.println(StrCorrectAnswer);
+			newQuiz.println(StrCorrectAnswer2);
+			newQuiz.println(StrCorrectAnswer3);
+			}
+			newQuiz.close();
+			con.setDrawColor(Color.BLACK);
+			con.drawString("Quiz saved!",100,100);
 		}
 		if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
 			con.closeConsole();
@@ -237,5 +275,5 @@ public class CPTNathaniel{
 }
 }
 }
-}
+
 
