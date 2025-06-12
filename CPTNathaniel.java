@@ -2,7 +2,7 @@ import arc.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.Font;
-import java.util.Random;
+
 
 public class CPTNathaniel{
 	public static void main(String[]args){
@@ -165,6 +165,7 @@ public class CPTNathaniel{
 			con.fillRect(0, 0, 1200, 1500);
 			con.setDrawColor(Color.BLACK);
 			con.drawString("Quiz completed!, press [R] to return to the main menu.", 100, 100);
+			
 		
 		}
 		//View leaderboard portion	
@@ -180,6 +181,7 @@ public class CPTNathaniel{
 			String StrPercentageScoreLeaderboard;
 			String[][] leaderboard = new String[100][3];
 			int leaderboardRow = 0;
+			boolean LeaderboardLoad = true;
 			
 			TextInputFile LeaderboardExtracting = new TextInputFile("leaderboard.txt");
 			
@@ -188,7 +190,7 @@ public class CPTNathaniel{
 				StrQuizNameLeaderboard = LeaderboardExtracting.readLine();
 				StrPercentageScoreLeaderboard = LeaderboardExtracting.readLine();
 				if(StrUsernameLeaderboard.equals("") || StrQuizNameLeaderboard.equals("") || StrPercentageScoreLeaderboard.equals("")){
-					i = 100;
+					LeaderboardLoad = false;
 				}else{
 					leaderboard[leaderboardRow][0] = StrUsernameLeaderboard;
 					leaderboard[leaderboardRow][1] = StrQuizNameLeaderboard;
@@ -206,6 +208,7 @@ public class CPTNathaniel{
 				con.drawString((i+1) + ". " + leaderboard[i][0] + " - " + leaderboard[i][1] + " - " + leaderboard[i][2], 50, 50 + i*30);
         }
     }
+    con.repaint();
 }
 
 		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
