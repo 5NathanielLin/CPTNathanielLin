@@ -11,9 +11,6 @@ public class CPTNathaniel{
 		
 		char chrMainMenu;
 			BufferedImage imgMathLogo = con.loadImage("MathPi.png");
-			//Font MathFont = con.loadFont("MathFont.ttf",30);
-			//con.setDrawFont(MathFont);
-		
 		
 		boolean running = true;
 		
@@ -54,9 +51,10 @@ public class CPTNathaniel{
 			
 			String strUsername;
 			String strCurrentQuiz;
-			con.setDrawColor(Color.BLACK);
+			con.setDrawColor(Color.WHITE);
 			con.fillRect(0,0,1200,1500);
 			con.repaint();
+			con.setTextColor(Color.BLACK);
 			con.println("What is your name?: ");
 			strUsername = con.readLine();
 			con.println("Which quiz do you want to do?: Linear, Quadratics, Geometry");
@@ -154,6 +152,7 @@ public class CPTNathaniel{
 				}
 				con.setDrawColor(Color.BLACK);
 				con.drawString("Press Enter to continue",70,250);
+				con.repaint();
 				con.readLine();
 				intRow++;
 			}
@@ -168,7 +167,13 @@ public class CPTNathaniel{
 			con.fillRect(0, 0, 1200, 1500);
 			con.setDrawColor(Color.BLACK);
 			con.drawString("Quiz completed!, press [R] to return to the main menu.", 100, 100);
-			
+			con.repaint();
+			char chrReturnMainMenu;
+			chrReturnMainMenu = ' ';
+			while(chrReturnMainMenu != 'r' && chrReturnMainMenu != 'R'){
+				chrReturnMainMenu = con.getChar();
+
+			}
 		
 		}
 		//View leaderboard portion	
@@ -202,7 +207,7 @@ public class CPTNathaniel{
 			}		
 		}
 		LeaderboardExtracting.close();
-		
+		con.setDrawColor(Color.BLACK);
 		if(leaderboardRow == 0) {
 			con.setDrawColor(Color.BLACK);
 			con.drawString("It's kind of empty here right now.", 100, 100);
@@ -211,7 +216,13 @@ public class CPTNathaniel{
 				con.drawString((i+1) + ". " + leaderboard[i][0] + " - " + leaderboard[i][1] + " - " + leaderboard[i][2], 50, 50 + i*30);
         }
     }
-    con.repaint();
+	con.drawString("Press [R] to return to the main menu.", 100, 600);
+	con.repaint();
+
+	char chrReturnMenu = ' ';
+	while(chrReturnMenu != 'r' && chrReturnMenu != 'R'){
+		chrReturnMenu = con.getChar(); 
+	}
 }
 
 		if(chrMainMenu == 'a'||chrMainMenu == 'A'){
@@ -252,13 +263,22 @@ public class CPTNathaniel{
 			newQuiz.println(StrCorrectAnswer3);
 			}
 			newQuiz.close();
+			con.clear();
+			
 			con.setDrawColor(Color.BLACK);
-			con.drawString("Quiz saved!",100,100);
-		}
-		if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
-			con.closeConsole();
+			con.drawString("Quiz saved!", 100, 100);
+			con.drawString("Press [R] to return to the main menu.", 100, 130);
+			con.repaint();
+	
+			char chrReturnMenu = ' ';
+			while(chrReturnMenu != 'r' && chrReturnMenu != 'R'){
+				chrReturnMenu = con.getChar();
+			}
+			if(chrMainMenu == 'q'||chrMainMenu == 'Q'){
+				con.closeConsole();
 		}
 	}
+}
 }
 }
 
