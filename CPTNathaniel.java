@@ -93,31 +93,49 @@ public class CPTNathaniel{
 			String strAnswer;
 			int intCounter;
 			intCounter = 0;
+			double dblCorrectPercentage;
 		
 			
 			while(CurrentQuiz.eof() == false && intRow <10){
+				
+				 if (intRow == 0) {
+					dblCorrectPercentage = 0.0;
+				} else {
+					dblCorrectPercentage = ((double) intCounter / intRow) * 100;
+				}
+				con.clear();
+				con.setDrawColor(Color.WHITE);
+				con.fillRect(0,0,1200,1500);
+				con.setDrawColor(Color.BLACK);
+				con.drawString(strUsername,200,20);
+				con.setDrawColor(Color.BLACK);
+				con.drawString(strCurrentQuiz,370,20);
+				con.setDrawColor(Color.BLACK);
+				con.drawString("Correct Answers: "+intCounter,500,20);
+				con.setDrawColor(Color.BLACK);
+				con.drawString("Score Percentage: "+dblCorrectPercentage,750,20);
+				
 				strMathQuiz[intRow][0] = CurrentQuiz.readLine();
 				strMathQuiz[intRow][1] = CurrentQuiz.readLine();
 				strMathQuiz[intRow][2] = CurrentQuiz.readLine();
 				strMathQuiz[intRow][3] = CurrentQuiz.readLine();
-				Random random = new Random();
-				int randoNumber = random.nextInt(100) + 1;
-				con.println(randoNumbter);
-				//strMathQuiz[intRow][4] = randoNumber;
+				//strMathQuiz[intRow][4] = Integer.toString(intRow);
 				con.setTextColor(Color.BLACK);
-				con.println("\n\nQuestion: " +strMathQuiz[0][0]);
+				con.println("\n\n\nQuestion: " +strMathQuiz[intRow][0]);
 				strAnswer = con.readLine();
 				if(strAnswer.equals(strMathQuiz[intRow][1])||strAnswer.equals(strMathQuiz[intRow][2])||strAnswer.equalsIgnoreCase(strMathQuiz[intRow][3])){	
 					intCounter = intCounter + 1;
-					con.println("Correct!");
-					con.println("A:"+strMathQuiz[intRow][1]);
-					con.println("B:"+strMathQuiz[intRow][2]);
-					con.println("C:"+strMathQuiz[intRow][3]);
-					con.println(strMathQuiz[intRow][4]);
+					con.drawString("Correct!", 100, 160);
+					con.drawString("A: " + strMathQuiz[intRow][1], 70, 100);
+					con.drawString("B: " + strMathQuiz[intRow][2], 70, 120);
+					con.drawString("C: " + strMathQuiz[intRow][3], 70, 140);
 				}else{
-					con.println("Wrong Answer");
+					con.drawString("Wrong Answer", 70, 160);
 				}
-			
+				con.setDrawColor(Color.BLACK);
+				con.drawString("Press Enter to continue",70,250);
+				con.readLine();
+				intRow++;
 			}
 			
 		if(chrMainMenu == 'v'||chrMainMenu == 'V'){

@@ -1,15 +1,40 @@
-What is the y-intercept of 6x+3?
+What is the y-intercept of y = 6x+3?
 +3
 3
 three
-
-What is the slope of 2/3x+5,+5,5,five
+What is the slope of y = 2/3x + 5
 +2/3
 2/3
 two over three 
-
 Solve for x, 3x + 6 = 18
 +4
 4
 four
-
+What is the slope of a horizontal line? 
+0.0
+0
+Zero
+Point A is (-4,0), Point B is (0,8). What is the slope?
++2
+2
+two
+Solve for x: 4x + 6 = 26
++5
+5
+five
+What is the y-intercept of y = 2x + 7
++8
+8
+eight
+What is the slope of y = 7x + 4/5
++7
+7
+seven
+Point A is (-5,0), Point B is (1,16). What is the slope?
++3
+3
+three
+What is the y-intercept of y = 4/5x + 9
++9
+9
+nine
