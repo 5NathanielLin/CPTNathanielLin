@@ -14,6 +14,7 @@ public class CPTNathaniel{
 			//Font MathFont = con.loadFont("MathFont.ttf",30);
 			//con.setDrawFont(MathFont);
 		
+		
 		boolean running = true;
 		
 		while(running){
@@ -24,7 +25,9 @@ public class CPTNathaniel{
 			//Logo
 			con.drawImage(imgMathLogo,250,75);
 
-		
+			//Title
+			con.setDrawColor(Color.BLACK);
+			con.drawString("Math Training Game",450,100);
 		
 			// Buttons 
 			con.setDrawColor(new Color(0,0,0));
